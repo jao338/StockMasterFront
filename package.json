@@ -1,8 +1,8 @@
 {
-  "name": "sistema-estoque",
+  "name": "stockmaster",
   "version": "0.0.1",
   "description": "Projeto de estudo para projeto integrador",
-  "productName": "Sistema de Estoque",
+  "productName": "StockMaster",
   "author": "joaohenriquerc123@gmail.com",
   "private": true,
   "scripts": {

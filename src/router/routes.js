@@ -1,18 +1,25 @@
+import Guard from "./middleware.js";
+
 const routes = [
   {
-    path: '/',
-    component: () => import('layouts/MainLayout.vue'),
-    children: [
-      { path: '', component: () => import('pages/IndexPage.vue') }
-    ]
+    path: "/login",
+    name: "login",
+    component: () => import("../pages/login/LoginLayout.vue"),
+    // beforeEnter: Guard.redirect,
   },
-
-  // Always leave this as last one,
-  // but you can also remove it
+  {
+    path: "/",
+    name: "home",
+    component: () => import('../pages/home/HomeLayout.vue'),
+    children: [
+      { path: '', component: () => import('../pages/home/HomePage.vue'), name: "homePage" }
+    ],
+    // beforeEnter: Guard.redirect,
+  },
   {
     path: '/:catchAll(.*)*',
     component: () => import('pages/ErrorNotFound.vue')
   }
-]
+];
 
-export default routes
+export default routes;

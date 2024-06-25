@@ -3,7 +3,7 @@
 
 export default {
   email: 'Email',
-  campo_obrigatorio: 'Required field',
-  senha: 'Password',
+  campo_obrigatorio: 'Campo obrigatório',
+  senha: 'Senha',
   login: 'Login',
 }
