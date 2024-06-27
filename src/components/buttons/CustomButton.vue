@@ -1,5 +1,5 @@
 <template>
-  <q-btn color="primary" :icon="icon" :to="{ name: to }">
+  <q-btn :color="color" :icon="icon" :to="{ name: to }">
     {{ message }}
   </q-btn>
 </template>
@@ -18,5 +18,9 @@ defineProps({
     type: String,
     required: false,
   },
-});
+  color: {
+    type: String,
+    required: false,
+  },
+})
 </script>

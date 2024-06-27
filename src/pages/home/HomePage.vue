@@ -1,12 +1,5 @@
 <template>
-  <div class="flex flex-center justify-center">
-    <CustomPrimaryButtton
-      message="Login"
-      to="login"
-    ></CustomPrimaryButtton>
-  </div>
+  <q-layout class="flex flex-center justify-center">home</q-layout>
 </template>
 
-<script setup>
-import CustomPrimaryButtton from 'components/buttons/CustomPrimaryButtton.vue'
-</script>
+<script setup></script>

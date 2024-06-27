@@ -21,11 +21,11 @@
           :rules="[requiredField]"
           :label="$t('senha')"
         ></CustomInputPassword>
-        <CustomPrimaryButtton
+        <CustomButton
           type="submit"
           class="w-100"
           :message="$t('login')"
-        ></CustomPrimaryButtton>
+        ></CustomButton>
       </q-form>
     </q-card-section>
   </q-card>
@@ -39,7 +39,7 @@ import Validations from "src/composables/Validations";
 
 import CustomInputText from "../../components/inputs/CustomInputText.vue";
 import CustomInputPassword from "../../components/inputs/CustomInputPassword.vue";
-import CustomPrimaryButtton from "../../components/buttons/CustomPrimaryButtton.vue";
+import CustomButton from "../../components/buttons/CustomButton.vue";
 
 const { requiredField } = Validations();
 const { t } = useI18n();
