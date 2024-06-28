@@ -18,4 +18,7 @@ export default {
   order: "Order | Orders",
   produto: "Product | Products",
   fornecedor: "Supplier | Suppliers",
+  sem_registro: "Don't have a registration yet?",
+  esqueceu_senha: "Forgot password?",
+  lembrar_de_mim: "Remember me",
 };

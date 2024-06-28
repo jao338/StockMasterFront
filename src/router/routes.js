@@ -8,6 +8,12 @@ const routes = [
     // beforeEnter: Guard.redirect,
   },
   {
+    path: "/register",
+    name: "register",
+    component: () => import("../pages/login/RegisterLayout.vue"),
+    // beforeEnter: Guard.redirect,
+  },
+  {
     path: "/",
     name: "layout",
     component: () => import("../layout/Layout.vue"),
@@ -20,8 +26,8 @@ const routes = [
       { path: "/supplier", name: "supplier", component: () => import("../pages/supplier/SupplierPage.vue")},
       { path: "/expedition", name: "expedition", component: () => import("../pages/expedition/ExpeditionPage.vue")},
       { path: "/order", name: "order", component: () => import("../pages/order/OrderPage.vue")},
-     ]
-    // beforeEnter: Guard.redirect,
+     ],
+    beforeEnter: Guard.redirect,
   },
   {
     path: "/:catchAll(.*)*",

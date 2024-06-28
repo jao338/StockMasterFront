@@ -18,6 +18,8 @@ export default {
   order: "Pedido | Pedidos",
   produto: "Produto | Produtos",
   fornecedor: "Fornecedor | Fornecedor",
+  register: "Register",
+  sem_registro: "Ainda não possui registro?",
+  esqueceu_senha: "Esqueceu a senha?",
+  lembrar_de_mim: "Lembrar de mim",
 };
-
-

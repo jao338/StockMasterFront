@@ -2,7 +2,7 @@
   <q-card class="bg-white card">
     <q-card-section>
       <q-form
-        @submit.prevent="login"
+        @submit.prevent="submit"
         class="q-ma-md row flex items-start column"
       >
         <div class="text-h6 text-black text-center w-100 q-mb-md">Login</div>
@@ -13,7 +13,7 @@
           :label="$t('email')"
         ></CustomInputText>
         <CustomInputPassword
-          class="w-100 q-mb-md"
+          class="w-100"
           v-model="form.password"
           :type="isPwd ? 'password' : 'text'"
           :isPwd="isPwd"
@@ -21,11 +21,29 @@
           :rules="[requiredField]"
           :label="$t('senha')"
         ></CustomInputPassword>
+        <div class="flex justify-start w-100 q-mb-md">
+          <CustomCheckbox
+            v-model="form.remember"
+            :label="$t('lembrar_de_mim')"
+          ></CustomCheckbox>
+        </div>
         <CustomButton
           type="submit"
           class="w-100"
+          color="green-14"
           :message="$t('login')"
         ></CustomButton>
+        <div class="q-mt-md flex justify-between items-center w-100">
+          <a href="/register" class="text-decoration-none">{{
+            $t("sem_registro")
+          }}</a>
+          <CustomButton
+            to="/forgot-password"
+            color="green-13"
+            class="text-caption"
+            :message="$t('esqueceu_senha')"
+          ></CustomButton>
+        </div>
       </q-form>
     </q-card-section>
   </q-card>
@@ -33,6 +51,7 @@
 
 <script setup>
 import { reactive, ref } from "vue";
+import { Cookies } from "quasar";
 import { useI18n } from "vue-i18n";
 
 import Validations from "src/composables/Validations";
@@ -40,6 +59,7 @@ import Validations from "src/composables/Validations";
 import CustomInputText from "../../components/inputs/CustomInputText.vue";
 import CustomInputPassword from "../../components/inputs/CustomInputPassword.vue";
 import CustomButton from "../../components/buttons/CustomButton.vue";
+import CustomCheckbox from "../../components/util/CustomCheckbox.vue";
 
 const { requiredField } = Validations();
 const { t } = useI18n();
@@ -49,20 +69,22 @@ const isPwd = ref(true);
 const form = reactive({
   email: "",
   password: "",
+  remember: "",
 });
 
 const toggleIsPwd = () => {
   isPwd.value = !isPwd.value;
 };
 
-const login = () => {
-  alert("ain");
+const submit = () => {
+  console.log("ijeoijeioj");
+  Cookies.set("logged", true, { expires: 30 });
 };
 </script>
 
 <style>
 .card {
-  width: 24vw;
+  width: 30vw;
   height: auto;
 }
 .w-100 {
