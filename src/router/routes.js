@@ -27,7 +27,7 @@ const routes = [
       { path: "/expedition", name: "expedition", component: () => import("../pages/expedition/ExpeditionPage.vue")},
       { path: "/order", name: "order", component: () => import("../pages/order/OrderPage.vue")},
      ],
-    beforeEnter: Guard.redirect,
+    //beforeEnter: Guard.redirect,
   },
   {
     path: "/:catchAll(.*)*",

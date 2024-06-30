@@ -28,6 +28,7 @@
           ></CustomCheckbox>
         </div>
         <CustomButton
+          @click=submit
           type="submit"
           class="w-100"
           color="green-14"
@@ -51,7 +52,6 @@
 
 <script setup>
 import { reactive, ref } from "vue";
-import { Cookies } from "quasar";
 import { useI18n } from "vue-i18n";
 
 import Validations from "src/composables/Validations";
@@ -60,26 +60,30 @@ import CustomInputText from "../../components/inputs/CustomInputText.vue";
 import CustomInputPassword from "../../components/inputs/CustomInputPassword.vue";
 import CustomButton from "../../components/buttons/CustomButton.vue";
 import CustomCheckbox from "../../components/util/CustomCheckbox.vue";
+import LoginService from "./LoginService";
 
 const { requiredField } = Validations();
+const { post } = LoginService();
 const { t } = useI18n();
 
 const isPwd = ref(true);
 
 const form = reactive({
+  $id: 1,
   email: "",
   password: "",
-  remember: "",
+  remember: false,
 });
 
 const toggleIsPwd = () => {
   isPwd.value = !isPwd.value;
 };
 
-const submit = () => {
-  console.log("ijeoijeioj");
-  Cookies.set("logged", true, { expires: 30 });
-};
+const submit = async () => {
+  const response = await post(form.value);
+  console.log(response.value);
+}; 
+
 </script>
 
 <style>
