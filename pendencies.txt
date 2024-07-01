@@ -1,0 +1,9 @@
+1 - Verificar se existem classes que adicionam largura de 100%, altura automática e que adicione "text-decoration: none" a uma tag "a"
+2 - Alterar todos os usos de "ref" em formulários para "reactive"
+3 - Configurar PINIA
+4 - Testar a criação e manipulação de cookies
+5 - Configurar esquema de cores no "quasar.variables.scss"
+6 - Alterar fontes usadas no projeto
+7 - Criar logotipo e adicionar nas telas
+8 - Usar o "useMeta" para configurar títulos dinamicamente
+9 - Criar um service com funções básicas, para que todos os outros serem criados a partir deste.

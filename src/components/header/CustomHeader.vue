@@ -2,7 +2,7 @@
   <q-header class="bg-white text-black q-pa-sm flex" elevated>
     <q-toolbar>
       <q-img
-        src="~src/assets/img/teste.jpg"
+        src="~src/assets/img/cat.jpg"
         style="height: 32px; max-width: 32px"
       />
       <q-toolbar-title>

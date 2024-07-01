@@ -1,4 +1,4 @@
 <template>
-  <div>Expedition</div>
+  <q-layout class="flex flex-center justify-center">expedition</q-layout>
 </template>
 <script setup></script>

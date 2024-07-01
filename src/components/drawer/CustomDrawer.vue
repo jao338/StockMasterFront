@@ -30,6 +30,11 @@ const linksList = [
     link: "sale",
   },
   {
+    title: t("compra"),
+    icon: "shopping_cart",
+    link: "buy",
+  },
+  {
     title: t("estoque"),
     icon: "inventory",
     link: "inventory",
@@ -53,7 +58,7 @@ const linksList = [
     title: t("expedicao"),
     icon: "local_shipping",
     link: "expedition",
-  },
+  }
   // {
   //   title: t("exemplo"),
   //   icon: "exemple",

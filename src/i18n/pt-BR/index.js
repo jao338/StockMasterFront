@@ -22,4 +22,12 @@ export default {
   sem_registro: "Ainda não possui registro?",
   esqueceu_senha: "Esqueceu a senha?",
   lembrar_de_mim: "Lembrar de mim",
+  criar: "Criar",
+  criar_conta: "Criar conta",
+  tipo_acesso: "Tipo de acesso",
+  admin: "Administrador",
+  vendas_ultimo_mes: "Vendas do último mês",
+  status_estoque: "Status do estoque",
+  teste: "Teste",
+  compra: "Compra",
 };
