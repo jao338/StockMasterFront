@@ -58,11 +58,6 @@ const routes = [
         name: "order",
         component: () => import("../pages/order/OrderPage.vue"),
       },
-      {
-        path: "/buy",
-        name: "buy",
-        component: () => import("../pages/buy/BuyPage.vue"),
-      },
     ],
     //beforeEnter: Guard.redirect,
   },
