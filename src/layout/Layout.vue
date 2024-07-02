@@ -33,6 +33,3 @@ defineOptions({
   name: "HomeLayout",
 });
 </script>
-
-<style>
-</style>

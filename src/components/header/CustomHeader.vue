@@ -1,5 +1,5 @@
 <template>
-  <q-header class="bg-white text-black q-pa-sm flex" elevated>
+  <q-header class="bg-grey-1 text-black q-pa-sm flex" elevated>
     <q-toolbar>
       <q-img
         src="~src/assets/img/cat.jpg"

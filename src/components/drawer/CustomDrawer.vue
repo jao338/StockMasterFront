@@ -1,18 +1,14 @@
 <template>
-  <q-drawer show-if-above bordered>
+  <q-drawer show-if-above bordered class="bg-grey-1 text-black">
     <q-list>
       <q-item-label header>{{ $t("link", 2) }}</q-item-label>
-      <EssentialLink
-        v-for="link in linksList"
-        :key="link.title"
-        v-bind="link"
-      />
+      <custom-link v-for="link in linksList" :key="link.title" v-bind="link" />
     </q-list>
   </q-drawer>
 </template>
 
 <script setup>
-import EssentialLink from "src/components/EssentialLink.vue";
+import CustomLink from "src/components/util/CustomLink.vue";
 
 import { useI18n } from "vue-i18n";
 
@@ -53,7 +49,7 @@ const linksList = [
     title: t("expedicao"),
     icon: "local_shipping",
     link: "expedition",
-  }
+  },
   // {
   //   title: t("exemplo"),
   //   icon: "exemple",
@@ -61,3 +57,5 @@ const linksList = [
   // },
 ];
 </script>
+
+<style></style>
