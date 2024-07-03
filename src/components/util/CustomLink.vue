@@ -12,7 +12,7 @@
 
 <script setup>
 defineOptions({
-  name: "EssentialLink",
+  name: "CustomLink",
 });
 
 const props = defineProps({

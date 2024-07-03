@@ -1,8 +1,13 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <CustomHeader :message="$t('stockmaster')" icon="home">
+    <custom-header
+      :message="$t('stockmaster')"
+      icon="home"
+      @toogleDrawer="toggleDrawerValue"
+    >
       <template v-slot:buttons>
-        <CustomButton
+        <custom-toggle />
+        <custom-button
           icon="account_circle"
           color="green-14"
           :message="$t('profile')"
@@ -10,10 +15,10 @@
           class="q-mr-sm"
           to="profile"
         />
-        <CustomButton class="abc" icon="logout" color="green-13" rounded />
+        <custom-button icon="logout" color="green-13" rounded />
       </template>
-    </CustomHeader>
-    <CustomDrawer />
+    </custom-header>
+    <custom-drawer v-model="drawer" />
     <q-page-container>
       <router-view />
     </q-page-container>
@@ -22,12 +27,20 @@
 
 <script setup>
 import { useI18n } from "vue-i18n";
+import { ref } from "vue";
 
 import CustomDrawer from "src/components/drawer/CustomDrawer.vue";
 import CustomHeader from "src/components/header/CustomHeader.vue";
 import CustomButton from "src/components/buttons/CustomButton.vue";
+import CustomToggle from "src/components/util/CustomToggle.vue";
 
 const { t } = useI18n();
+
+const drawer = ref(true);
+
+const toggleDrawerValue = () => {
+  drawer.value = !drawer.value;
+};
 
 defineOptions({
   name: "HomeLayout",

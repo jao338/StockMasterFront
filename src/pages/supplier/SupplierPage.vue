@@ -1,49 +1,61 @@
 <template>
-  <q-layout class="row q-pa-md q-pt-xl q-pl-xl flex flex-start justify-start">
-    <q-card class="w-100">
+  <q-layout class="row q-pa-md flex flex-start justify-start">
+    <q-card class="full-width">
       <custom-expansion
         :message="t('fornecedor', 2)"
         icon="transfer_within_a_station"
       >
         <template v-slot:text>
           <q-form
-            class="row q-gutter-md flex items-between"
+            class="row q-col-gutter-md items-center"
             @submit.prevent="submit"
           >
             <custom-input-text
               v-model="form.name_supplier"
-              class="col-md-2"
+              class="col-lg-2 col-md-2 col-xs-4"
               :label="$t('nome')"
             />
             <custom-input-text
               v-model="form.cnpj"
-              class="col-md-2"
+              class="col-lg-2 col-md-2 col-xs-4"
               :label="$t('cnpj')"
             />
             <custom-input-text
               v-model="form.address"
-              class="col-md-2"
+              class="col-lg-2 col-md-2 col-xs-4"
               :label="$t('endereco')"
             />
-            <q-card-actions class="col-lg-5 col-md-5 col-xs-5 justify-end">
+            <q-card-actions class="col-lg-6 col-md-6 col-xs-12 justify-end">
               <custom-button
                 @click="submit"
                 color="green-14"
                 icon="search"
                 :label="$t('pesquisar')"
-              ></custom-button>
+              />
               <custom-button
                 @click="clear"
                 color="green-13"
-                icon="clear"
+                icon="delete"
                 :label="$t('limpar')"
-              ></custom-button>
+              />
             </q-card-actions>
           </q-form>
         </template>
       </custom-expansion>
-      <q-separator></q-separator>
+      <q-separator />
+      <div class="row justify-between">
+        <span class="q-mr-md q-mt-md q-ml-md text-h6">{{
+          $t("fornecedor", 2)
+        }}</span>
+        <custom-button
+          class="q-mr-md q-mt-md"
+          color="green-14"
+          icon="add"
+          :message="$t('adicionar')"
+        />
+      </div>
       <custom-table
+        :paginate="paginate"
         class="q-ma-md"
         :rows="rows"
         :columns="columns"
@@ -54,18 +66,17 @@
             <custom-button
               dense
               size="sm"
-              color="primary"
+              color="blue"
               icon="edit"
               @click="put(props.row.id_supplier)"
-            ></custom-button>
-
+            />
             <custom-button
               dense
               size="sm"
               color="negative"
               icon="delete"
               @click="destroy(props.row.id_supplier)"
-            ></custom-button>
+            />
           </q-td>
         </template>
       </custom-table>
@@ -104,7 +115,7 @@ const columns = computed(() => {
     {
       name: "name_supplier",
       field: "name_supplier",
-      label: t("fornecedor"),
+      label: t("nome"),
       align: "left",
       sortable: true,
     },
@@ -142,24 +153,24 @@ const columns = computed(() => {
   ];
 });
 
-const rows = computed(() => {
-  return [
-    {
-      id_supplier: 1,
-      name_supplier: "test1",
-      contact: "teste1",
-      cnpj: "teste1",
-      address: "teste1",
-    },
+const paginate = {
+  rowsPerPage: 15,
+};
 
-    {
-      id_supplier: 2,
-      name_supplier: "teste2",
-      contact: "teste2",
-      cnpj: "teste2",
-      address: "teste2",
-    },
-  ];
+const array = [];
+
+for (let i = 1; i <= 50; i++) {
+  array.push({
+    id_supplier: i,
+    name_supplier: `teste ${i}`,
+    contact: `teste ${i}`,
+    cnpj: `teste ${i}`,
+    address: `teste ${i}`,
+  });
+}
+
+const rows = computed(() => {
+  return array;
 });
 
 const put = (value) => {
@@ -178,3 +189,11 @@ const clear = () => {
   form.value = resetForm();
 };
 </script>
+
+<style>
+thead tr:first-child th {
+  background-color: #00c853;
+  font-size: 1rem;
+  color: white;
+}
+</style>

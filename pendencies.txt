@@ -1,4 +1,4 @@
-1 - Verificar se existem classes que adicionam largura de 100%, altura automática e que adicione "text-decoration: none" a uma tag "a"
+1 - Verificar a existência de uma classe que adiciona "text-decoration: none" a uma tag "a"
 2 - Alterar todos os usos de "ref" em formulários para "reactive"
 3 - Configurar PINIA
 4 - Testar a criação e manipulação de cookies
@@ -7,3 +7,12 @@
 7 - Criar logotipo e adicionar nas telas
 8 - Usar o "useMeta" para configurar títulos dinamicamente
 9 - Criar um service com funções básicas, para que todos os outros serem criados a partir deste.
+10 - Na tela de perfil, ao invés de usar um componente "q-icon", usar um input do tipo "file"
+11 - Finalizar tela de perfil
+12 - Começar tela Home
+13 - Começar tela de Vendas
+14 - Começar tela de Estoque
+15 - Começar tela de Produtos
+16 - Começar tela de Fornecedores
+17 - Começar tela de Pedido
+18 - Começar tela de expedição

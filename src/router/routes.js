@@ -4,14 +4,20 @@ const routes = [
   {
     path: "/login",
     name: "login",
-    component: () => import("../pages/login/LoginPage.vue"),
-    // beforeEnter: Guard.redirect,
+    component: () => import("../pages/user/LoginPage.vue"),
+    // beforeEnter: Guard.isLogged,
   },
   {
     path: "/register",
     name: "register",
-    component: () => import("../pages/login/RegisterPage.vue"),
-    // beforeEnter: Guard.redirect,   Apenas um usuário do tipo admin pode acessar esta rota. Criar função adequado para fazer isso.
+    component: () => import("../pages/user/RegisterPage.vue"),
+    // beforeEnter: Guard.isLogged,   Apenas um usuário do tipo admin pode acessar esta rota. Criar função adequado para fazer isso.
+  },
+  {
+    path: "/profile",
+    name: "profile",
+    component: () => import("../pages/user/ProfilePage.vue"),
+    // beforeEnter: Guard.isLogged,
   },
   {
     path: "/",
@@ -58,8 +64,13 @@ const routes = [
         name: "order",
         component: () => import("../pages/order/OrderPage.vue"),
       },
+      {
+        path: "/departament",
+        name: "departament",
+        component: () => import("../pages/departaments/DepartamentPage.vue"),
+      },
     ],
-    //beforeEnter: Guard.redirect,
+    //beforeEnter: Guard.isLogged,
   },
   {
     path: "/:catchAll(.*)*",

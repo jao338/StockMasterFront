@@ -7,17 +7,17 @@
             @submit.prevent="submit"
             class="q-ma-md row flex items-start column"
           >
-            <div class="text-h6 text-black text-center w-100 q-mb-md">
-              {{ $t("login") }}
+            <div class="text-h6 text-black text-center full-width q-mb-md">
+              {{ $t("register") }}
             </div>
             <custom-input-text
-              class="w-100 q-mb-sm"
+              class="full-width q-mb-sm"
               v-model="form.email"
               :rules="[requiredField]"
               :label="$t('email')"
             ></custom-input-text>
             <custom-input-password
-              class="w-100"
+              class="full-width"
               v-model="form.password"
               :type="isPwd ? 'password' : 'text'"
               :isPwd="isPwd"
@@ -25,28 +25,13 @@
               :rules="[requiredField]"
               :label="$t('senha')"
             ></custom-input-password>
-            <div class="flex justify-start w-100 q-mb-md">
-              <custom-checkbox
-                v-model="form.remember"
-                :label="$t('lembrar_de_mim')"
-              ></custom-checkbox>
-            </div>
             <custom-button
               @click="submit"
               type="submit"
-              class="w-100"
+              class="full-width"
               color="green-14"
-              :message="$t('login')"
+              :message="$t('criar_conta')"
             ></custom-button>
-            <div class="q-mt-md flex justify-between items-center w-100">
-              <a href="/register">{{ $t("sem_registro") }}</a>
-              <custom-button
-                to="/forgot-password"
-                color="green-13"
-                class="text-caption"
-                :message="$t('esqueceu_senha')"
-              ></custom-button>
-            </div>
           </q-form>
         </q-card-section>
       </q-card>
@@ -63,7 +48,6 @@ import Validations from "src/composables/Validations";
 import CustomInputText from "../../components/inputs/CustomInputText.vue";
 import CustomInputPassword from "../../components/inputs/CustomInputPassword.vue";
 import CustomButton from "../../components/buttons/CustomButton.vue";
-import CustomCheckbox from "../../components/util/CustomCheckbox.vue";
 // import LoginService from "./LoginService";
 
 const { requiredField } = Validations();
@@ -75,7 +59,7 @@ const isPwd = ref(true);
 const form = ref({
   email: "",
   password: "",
-  remember: false,
+  tipo_acesso: 1,
 });
 const toggleIsPwd = () => {
   isPwd.value = !isPwd.value;

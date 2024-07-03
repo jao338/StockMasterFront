@@ -1,7 +1,7 @@
 import { Cookies } from 'quasar'
 
 export default {
-  redirect(to, from, next) {
+  isLogged(to, from, next) {
     const logged = Cookies.get('logged')
 
     if (logged) {
@@ -9,5 +9,10 @@ export default {
     }
 
     return next('/login')
+  },
+
+  //  Permite acessar a rota apenas se o usuário já estiver logado e ele for um gerente ou administrador
+  isManager(to, from, next) {
+
   },
 }

@@ -42,4 +42,5 @@ export default {
   acao: "Actions",
   editar: "Edit",
   deletar: "Delete",
+  departamento: "Departament | Departaments",
 };
