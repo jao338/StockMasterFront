@@ -16,3 +16,11 @@
 16 - Começar tela de Fornecedores
 17 - Começar tela de Pedido
 18 - Começar tela de expedição
+19 - Finalizar a criação de novos componentes de gráficos
+20 - Ajustar dark mode
+21 - Configura troca de linguagem
+22 - Alterar orientação do componente "CustomDoughnutGraphic"
+23 - Criar funções no middleware de autenticação
+24 - Melhorar a hierarquia de niveis de acesso, implementar algum sistema de cargo para cada usuário
+24 - Corrigir o uso dos selects, alterar a forma de que o "form" é criado.
+25 - Alterar o responsivo de todas as páginas e componentes
