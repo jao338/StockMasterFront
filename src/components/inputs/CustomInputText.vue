@@ -1,51 +1,30 @@
 <template>
-  <q-header
-    :class="
-      !$q.dark.isActive ? 'bg-white q-pa-sm flex' : 'bg-black q-pa-sm flex'
-    "
-    elevated
+  <q-input
+    :model-value="props.modelValue"
+    @update:modelValue="(val) => emits('update:modelValue', val)"
+    filled
+    dense
+    hide-bottom-space
+    lazy-rules
   >
-    <q-toolbar>
-      <custom-button
-        @click="toogleDrawer"
-        flat
-        round
-        color="primary"
-        icon="menu"
-        v-if="$q.screen.width <= 1024"
-        />
-      <q-img
-        src="~src/assets/img/cat.jpg"
-        style="height: 32px; max-width: 32px"
+    <template v-if="props.modelValue && props.clearable" v-slot:append>
+      <q-icon
+        class="cursor-pointer"
+        name="close"
+        @click.stop.prevent="emits('update:modelValue', null)"
       />
-      <q-toolbar-title :class="!$q.dark.isActive ? 'text-black' : 'text-white'">
-        {{ message }}
-      </q-toolbar-title>
-
-      <slot name="buttons"></slot>
-    </q-toolbar>
-  </q-header>
+    </template>
+  </q-input>
 </template>
+
 <script setup>
-import { useQuasar } from "quasar";
-import CustomButton from "src/components/buttons/CustomButton.vue";
-
-const q = useQuasar();
-
-const emits = defineEmits(["toogleDrawer"]);
-
-const toogleDrawer = () => {
-  emits("toogleDrawer");
-};
-
-defineProps({
-  message: {
-    type: String,
-    required: false,
-  },
-  icon: {
-    type: String,
-    required: false,
+const props = defineProps({
+  modelValue: [String, Number],
+  clearable: {
+    type: Boolean,
+    default: true,
   },
 });
+
+const emits = defineEmits(["update:modelValue"]);
 </script>

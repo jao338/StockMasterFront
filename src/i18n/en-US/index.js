@@ -64,4 +64,6 @@ export default {
   tamanho_minimo: "Minimum Size: ",
   tamanho_maximo: "Maximum size: ",
   senha_invalida: "Invalid Password",
+  desenvolvido_por: "Desenvolved By João Henrique",
+  nao_encontrado: "Not Found"
 };

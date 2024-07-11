@@ -18,11 +18,11 @@ defineOptions({
 const props = defineProps({
   title: {
     type: String,
-    required: true,
+    required: false,
   },
   link: {
     type: String,
-    default: "#",
+    default: "/",
   },
 
   icon: {

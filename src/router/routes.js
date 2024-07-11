@@ -29,11 +29,6 @@ const routes = [
         name: "home",
         component: () => import("../pages/home/HomePage.vue"),
       },
-      {
-        path: "/example",
-        name: "example",
-        component: () => import("../pages/example/ExamplePage.vue"),
-      },
     ],
     //beforeEnter: Guard.isLogged,
   },

@@ -1,8 +1,7 @@
 <template>
   <q-layout view="lHh Lpr lFf">
     <custom-header
-      :message="$t('stockmaster')"
-      icon="home"
+      :message="$t('lorem')"
       @toogleDrawer="toggleDrawerValue"
     >
       <template v-slot:buttons>
@@ -22,6 +21,8 @@
     <q-page-container>
       <router-view />
     </q-page-container>
+    <custom-footer>
+    </custom-footer>
   </q-layout>
 </template>
 
@@ -31,6 +32,7 @@ import { ref } from "vue";
 
 import CustomDrawer from "src/components/drawer/CustomDrawer.vue";
 import CustomHeader from "src/components/header/CustomHeader.vue";
+import CustomFooter from "src/components/footer/CustomFooter.vue"
 import CustomButton from "src/components/buttons/CustomButton.vue";
 import CustomToggle from "src/components/util/CustomToggle.vue";
 
@@ -43,6 +45,6 @@ const toggleDrawerValue = () => {
 };
 
 defineOptions({
-  name: "HomeLayout",
+  name: "DefaultLayout",
 });
 </script>

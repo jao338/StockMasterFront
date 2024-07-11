@@ -29,7 +29,8 @@
     "vue-meta": "^2.4.0",
     "vue-router": "^4.0.12",
     "vue-scrollto": "^2.20.0",
-    "vuedraggable": "^2.24.3"
+    "vuedraggable": "^2.24.3",
+    "xlsx-js-style": "^1.2.0"
   },
   "devDependencies": {
     "@intlify/vite-plugin-vue-i18n": "^3.3.1",
