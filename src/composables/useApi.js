@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from '../config/axiosConfig';
 
 export default function useApi(apiUrl) {
   const store = async (item) => {
@@ -19,7 +19,7 @@ export default function useApi(apiUrl) {
     }
   };
 
-  const updateByID = async (id, updatedItem) => {
+  const update = async (id, updatedItem) => {
     try {
       const response = await axios.put(`${apiUrl}/${id}`, updatedItem);
       return response.data;
@@ -28,7 +28,7 @@ export default function useApi(apiUrl) {
     }
   };
 
-  const deleteByID = async (id) => {
+  const destroy = async (id) => {
     try {
       await axios.delete(`${apiUrl}/${id}`);
       return id;
@@ -40,7 +40,7 @@ export default function useApi(apiUrl) {
   return {
     store,
     index,
-    updateByID,
-    deleteByID,
+    update,
+    destroy,
   };
 }

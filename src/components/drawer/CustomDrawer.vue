@@ -4,11 +4,12 @@
       <div
         class="flex column justify-center items-center q-pa-md bg-transparent"
       >
-        <custom-avatar
-          @click="cuzin"
+        <CustomAvatar
+          class="cursor-pointer"
+          @click="router.push('/profile')"
           link="/profile"
           src="src/assets/img/cat.jpg"
-        ></custom-avatar>
+        />
         <div
           :class="!$q.dark.isActive ? 'text-h6 text-black text-weight-bold' : 'text-h6 text-white text-weight-bold'"
         >
@@ -34,10 +35,6 @@ const { t } = useI18n();
 
 const q = useQuasar();
 const router = useRouter();
-
-const cuzin = (() => {
-  router.push('/profile')
-})
 
 const linksList = [
   {

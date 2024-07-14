@@ -9,10 +9,10 @@
     {{ message }}
   </q-btn>
 </template>
-  
+
 <script setup>
 import { useRouter } from "vue-router";
-  
+
 const router = useRouter();
 
 const props = defineProps({
@@ -31,7 +31,7 @@ const props = defineProps({
   color: {
     type: String,
     required: false,
+    default: 'primary'
   },
 });
 </script>
-  

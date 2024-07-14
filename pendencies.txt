@@ -1,0 +1,7 @@
+* - Finalizar a tela de "ProfilePage", usar componente "CustomAvatar", alterar esquema de cores e melhorar modal.
+* - Melhorar o componente "CustomDrawer" e "CustomCard"
+* - Criar mais de um tipo de modal(usar outras bibliotecas)
+* - Criar todos os outros tipos de gráficos da biblioteca "chart.js"
+* - Criar dois modelos diferentes de tabela
+* - Adicionar loading em botões e skeleton em campos(ainda é necessário criar esses componentes/recursos)
+* - Finalizar componentes "CustomCarouselThree" e "CustomCarouselCard"

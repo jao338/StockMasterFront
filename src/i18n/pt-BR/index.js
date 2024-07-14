@@ -18,7 +18,7 @@ export default {
   order: "Pedido | Pedidos",
   produto: "Produto | Produtos",
   fornecedor: "Fornecedor | Fornecedor",
-  register: "Register",
+  cadastro: "Cadastro",
   sem_registro: "Ainda não possui registro?",
   esqueceu_senha: "Esqueceu a senha?",
   lembrar_de_mim: "Lembrar de mim",
@@ -65,5 +65,8 @@ export default {
   tamanho_maximo: "Tamanho Máximo: ",
   senha_invalida: "Senha Inválida",
   desenvolvido_por: "Desenvolvido por João Henrique",
-  nao_encontrado: "Não encontrado"
+  nao_encontrado: "Não encontrado",
+  texto_esqueci_senha_info: "Digite um email válido, enviaremos um link para recuperar sua senha assim que possível!",
+  texto_esqueci_senha_aviso: "Em breve você receberá um link em seu email para recuperar a sua senha!",
+  enviar: "Enviar",
 };

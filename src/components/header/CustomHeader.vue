@@ -6,11 +6,9 @@
     elevated
   >
     <q-toolbar>
-      <custom-button
+      <custom-primary-flat-button
         @click="toogleDrawer"
-        flat
         round
-        color="primary"
         icon="menu"
         v-if="$q.screen.width <= 1024"
         />
@@ -28,7 +26,7 @@
 </template>
 <script setup>
 import { useQuasar } from "quasar";
-import CustomButton from "src/components/buttons/CustomButton.vue";
+import CustomPrimaryFlatButton from "src/components/buttons/CustomPrimaryButtonFlat.vue";
 
 const q = useQuasar();
 

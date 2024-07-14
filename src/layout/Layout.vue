@@ -1,29 +1,26 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
-    <custom-header
+  <CustomLayout view="lHh Lpr lFf">
+    <CustomHeader
       :message="$t('lorem')"
       @toogleDrawer="toggleDrawerValue"
     >
       <template v-slot:buttons>
-        <custom-toggle />
-        <custom-button
+        <CustomToggle/>
+        <CustomPrimaryButton
           icon="account_circle"
-          color="green-14"
           :message="$t('profile')"
-          rounded
           class="q-mr-sm"
           to="profile"
         />
-        <custom-button icon="logout" color="green-13" rounded />
+        <CustomSecondaryButton icon="logout" />
       </template>
-    </custom-header>
-    <custom-drawer v-model="drawer" />
+    </CustomHeader>
+    <CustomDrawer v-model="drawer" />
     <q-page-container>
       <router-view />
     </q-page-container>
-    <custom-footer>
-    </custom-footer>
-  </q-layout>
+    <CustomFooter/>
+  </CustomLayout>
 </template>
 
 <script setup>
@@ -33,8 +30,10 @@ import { ref } from "vue";
 import CustomDrawer from "src/components/drawer/CustomDrawer.vue";
 import CustomHeader from "src/components/header/CustomHeader.vue";
 import CustomFooter from "src/components/footer/CustomFooter.vue"
-import CustomButton from "src/components/buttons/CustomButton.vue";
+import CustomPrimaryButton from "src/components/buttons/CustomPrimaryButton.vue";
+import CustomSecondaryButton from "src/components/buttons/CustomSecondaryButton.vue"
 import CustomToggle from "src/components/util/CustomToggle.vue";
+import CustomLayout from "src/components/util/CustomLayout.vue"
 
 const { t } = useI18n();
 

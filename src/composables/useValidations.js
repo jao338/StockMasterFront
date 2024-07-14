@@ -32,7 +32,7 @@ export default function useValidations() {
     const phonePattern = /^\(?([0-9]{2})\)?[-. ]?([0-9]{4,5})[-. ]?([0-9]{4})$/;
     return phonePattern.test(val) || t("telefone_invalido");
   };
-  
+
   return {
     requiredField,
     emailFormat,
@@ -40,6 +40,5 @@ export default function useValidations() {
     maxLength,
     passwordStrength,
     phoneNumber,
-    maskInput,
   };
 }

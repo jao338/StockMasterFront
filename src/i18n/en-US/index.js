@@ -17,7 +17,7 @@ export default {
   expedicao: "Expedition",
   order: "Order | Orders",
   produto: "Product | Products",
-  register: "Register",
+  cadastro: "Register",
   fornecedor: "Supplier | Suppliers",
   sem_registro: "Don't have a registration yet?",
   esqueceu_senha: "Forgot password?",
@@ -65,5 +65,8 @@ export default {
   tamanho_maximo: "Maximum size: ",
   senha_invalida: "Invalid Password",
   desenvolvido_por: "Desenvolved By João Henrique",
-  nao_encontrado: "Not Found"
+  nao_encontrado: "Not Found",
+  texto_esqueci_senha_info: "Digite um email válido, enviaremos um link para recuperar sua senha assim que possível!",
+  texto_esqueci_senha_aviso: "Em breve você receberá um link em seu email para recuperar a sua senha!",
+  enviar: "Send",
 };

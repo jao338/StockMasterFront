@@ -1,98 +1,37 @@
 <template>
-  <q-layout class="flex flex-center justify-center">
-    <q-card class="row justify-center items-center" style="width: 80vw">
-      <q-card-section class="col-lg-3 col-md-3 col-xs-3 flex items-end">
-        <q-avatar size="256px" >
-          <img src="~src/assets/img/cat.jpg" />
-        </q-avatar>
-        <q-icon
-          @click="upload"
-          name="upload"
-          size="32px"
-          color="secondary"
-        />
-      </q-card-section>
-
-      <q-card-section class="col-lg-9 col-md-9 col-xs-9 right-card q-pa-xl">
-        <q-item-label class="text-h5 text-weight-bold">{{
-            form.name
-          }}</q-item-label>
-        <q-item-label caption>{{ form.email }}</q-item-label>
-
-        <span class="text-weight-bold q-mb-md q-mt-md">{{
-            $t("minhas_informacoes")
-          }}</span>
-        <div class="row q-col-gutter-md">
-          <custom-input-text
-            v-model="form.name"
-            class="q-mb-sm col-lg-4 col-md-4 col-xs-4"
-            :label="$t('nome')"
+  <CustomLayout class="row justify-center items-center q-pa-md">
+    <CustomHorizontalCard class="bg-white col-xl-3 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+      <template v-slot:left>
+        <div class="row items-center col-6 justify-start q-pl-md">
+          <CustomAvatar
+            class="cursor-pointer"
+            style="width: 182px; height: 182px"
+            src="src/assets/img/cat.jpg"
           />
-          <custom-input-text
-            v-model="form.email"
-            class="q-mb-sm col-lg-4 col-md-4 col-xs-4"
-            :label="$t('email')"
-          />
-          <custom-input-text
-            v-model="form.departament"
-            class="q-mb-sm col-lg-4 col-md-4 col-xs-4"
-            :label="$t('departamento')"
-            disable
-          />
-          <custom-input-text
-            v-model="form.office"
-            class="q-mb-sm col-lg-4 col-md-4 col-xs-4"
-            :label="$t('cargo')"
-            disable
-          />
-          <custom-select
-            v-model="form.status"
-            class="q-mb-sm col-lg-4 col-md-4 col-xs-4"
-            :label="$t('status')"
-            :options="options"
-            option-label="label"
-            option-value="value"
-            disable
-          />
-          <custom-input-text
-            v-model="form.telephony"
-            class="q-mb-sm col-lg-4 col-md-4 col-xs-4"
-            :label="$t('telefone')"
-          />
-          <custom-input-text
-            v-model="form.creation_date"
-            class="q-mb-sm col-lg-4 col-md-4 col-xs-4"
-            :label="$t('data_criacao')"
-            disable
-          />
-          <div class="row full-width justify-end">
-            <custom-button
-              @click="edit"
-              color="primary"
-              :label="t('editar')"
-              class="q-mr-md"
-            />
-            <custom-button
-              @click="dialog = !dialog"
-              color="negative"
-              :label="t('trocar_senha')"
-            />
-          </div>
         </div>
-      </q-card-section>
-    </q-card>
-    <custom-modal v-model="dialog" filter="blur(4px)">
+      
+      </template>
+
+      <template v-slot:right>
+        <q-img
+          class="col-12 border"
+          src="https://cdn.quasar.dev/img/parallax2.jpg"
+        />
+      </template>
+
+    </CustomHorizontalCard>
+    <CustomModal v-model="dialog" filter="blur(4px)">
       <template v-slot:header>
         <div>{{ t("esqueceu_senha") }}</div>
       </template>
 
       <template v-slot:content>
         <div class="row q-col-gutter-lg">
-          <custom-input-text
+          <CustomInputText
             class="col-lg-12 col-md-12 col-xs-12"
             :label="t('senha')"
           />
-          <custom-input-text
+          <CustomInputText
             class="col-lg-12 col-md-12 col-xs-12"
             :label="t('confirmacao_senha')"
           />
@@ -110,29 +49,34 @@
           />
         </div>
       </template>
-    </custom-modal>
-    <custom-button
-      class="rotate-180 absolute-top-left q-ml-lg q-mt-lg"
-      icon="logout"
+    </CustomModal>
+    <CustomButton
+      class="mirrored-icon absolute-top-left q-ml-lg q-mt-lg"
+      icon="logout" 
       to="home"
       color="secondary"
       fixed-top
     />
-  </q-layout>
+  </CustomLayout>
 </template>
 <script setup>
 import { useI18n } from "vue-i18n";
+import { useRouter } from "vue-router";
 import { ref } from "vue";
 
 import CustomInputText from "src/components/inputs/CustomInputText.vue";
-import CustomSelect from "src/components/selects/CustomSelect.vue";
 import CustomButton from "src/components/buttons/CustomButton.vue";
 import CustomModal from "src/components/modals/CustomModal.vue";
+import CustomLayout from "src/components/util/CustomLayout.vue";
+import CustomHorizontalCard from "src/components/cards/CustomHorizontalCard.vue";
+import CustomAvatar from "src/components/util/CustomAvatar.vue"
 
 const { t } = useI18n();
 
+const router = useRouter();
+
 const upload = () => {
-  alert("upload");
+  alert('aqui deve ser um input do tipo file')
 };
 
 const dialog = ref(false);
@@ -146,6 +90,7 @@ const options = [
   { label: "Inativo", value: 2 },
   { label: "Pendente", value: 3 },
 ];
+/*
 
 function resetForm() {
   return {
@@ -160,6 +105,8 @@ function resetForm() {
 }
 
 const form = resetForm();
+
+*/
 </script>
 
 <style>
