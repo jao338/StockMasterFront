@@ -1,9 +1,10 @@
 <template>
   <q-btn
     :label="$t('excel')"
-    color="green-14"
-    icon="fa-solid fa-file-excel"
-    class="button-rounded"
+    icon="attach_file"
+    color="primary"
+    align="left"
+    rounded
     @click="exportToExcel"
   />
 </template>
