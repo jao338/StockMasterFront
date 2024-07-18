@@ -18,7 +18,7 @@
         <div class="text-grey">{{ t('lorem') }}</div>
       </div>
 
-      <custom-link v-for="link in linksList" :key="link.title" v-bind="link" />
+      <CustomLink v-for="link in linksList" :key="link.title" v-bind="link" />
     </q-list>
   </q-drawer>
 </template>

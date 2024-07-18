@@ -23,7 +23,6 @@ const props = defineProps({
   }
 });
 
-// Função para exportar a tabela para Excel
 const exportToExcel = () => {
   const worksheet = XLSX.utils.json_to_sheet(props.data);
   const workbook = XLSX.utils.book_new();

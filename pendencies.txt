@@ -1,3 +1,4 @@
+* - Finalizar "CustomWindowsCard"
 * - Finalizar a tela de "ProfilePage", usar componente "CustomAvatar", alterar esquema de cores e melhorar modal.
 * - Melhorar o componente "CustomDrawer" e "CustomCard"
 * - Criar mais de um tipo de modal(usar outras bibliotecas)

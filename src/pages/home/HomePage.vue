@@ -9,7 +9,7 @@
           sunt odit impedit fugiat eaque perferendis, soluta facilis in ipsum
           dolore expedita.
         </div>
-        <CustomExcel :data="items"></CustomExcel>
+        <CustomWindowsCard :items="links"></CustomWindowsCard>
       </template>
     </CustomCard>
   </CustomLayout>
@@ -17,26 +17,25 @@
 
 <script setup>
 import { useI18n } from "vue-i18n";
-import { ref } from "vue";
+import { markRaw } from "vue";
 
 import CustomCard from "src/components/cards/CustomCard.vue";
 import CustomLayout from "src/components/util/CustomLayout.vue";
-import CustomExcel from "src/components/buttons/CustomExcelButton.vue";
+import CustomWindowsCard from "src/components/util/CustomWindowsCard.vue"
+import ExamplePage from "src/pages/example/ExamplePage.vue"
+import ExamplePageTwo from "src/pages/example/ExamplePageTwo.vue"
 
 const { t } = useI18n();
 
-const items = ref([
+const links = [
   {
-    name: 1,
-    src: "https://cdn.quasar.dev/img/mountains.jpg",
-    title: "Lorem 1",
-    text: "Lorem 1",
+    title: t("exemplo"),
+    component: markRaw(ExamplePage)
   },
+
   {
-    name: 2,
-    src: "https://cdn.quasar.dev/img/mountains.jpg",
-    title: "Lorem 2",
-    text: "Lorem 2",
+    title: t("exemplo"),
+    component: markRaw(ExamplePageTwo)
   },
-]);
+];
 </script>
