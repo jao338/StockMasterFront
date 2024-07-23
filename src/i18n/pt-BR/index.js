@@ -69,5 +69,7 @@ export default {
   texto_esqueci_senha_info: "Digite um email válido, enviaremos um link para recuperar sua senha assim que possível!",
   texto_esqueci_senha_aviso: "Em breve você receberá um link em seu email para recuperar a sua senha!",
   enviar: "Enviar",
-  exemplo: "Exemplo"
+  exemplo: "Exemplo",
+  configuracoes: "Configurações",
+  placeholder_email: "example@hotmail.com" 
 };

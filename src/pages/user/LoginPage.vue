@@ -13,9 +13,9 @@
             <div class="row q-pa-md">
               <custom-input-text
                 class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 q-mb-md"
-                v-model="form.email"
+                v-model="form.login"
                 :rules="[requiredField]"
-                :label="$t('email')"
+                :label="$t('login')"
               />
               <custom-input-password
                 class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"
@@ -84,7 +84,7 @@ const { t } = useI18n();
 const isPwd = ref(true);
 
 const form = ref({
-  email: "",
+  login: "",
   password: "",
   remember: false,
 });

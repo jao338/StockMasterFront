@@ -10,15 +10,15 @@
               {{ $t("cadastro") }}
             </div>
 
-            <div class="row q-pa-md">
-              <custom-input-text
-                class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 q-pb-md"
-                v-model="form.email"
+            <div class="row q-pa-md q-col-gutter-sm">
+              <CustomInputText
+                class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12"
+                v-model="form.login"
                 :rules="[requiredField]"
-                :label="$t('email')"
+                :label="$t('login')"
               />
-              <custom-input-password
-                class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"
+              <CustomInputPassword
+                class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12"
                 v-model="form.password"
                 :type="isPwd ? 'password' : 'text'"
                 :isPwd="isPwd"
@@ -26,13 +26,26 @@
                 :rules="[requiredField]"
                 :label="$t('senha')"
               />
-              <custom-primary-button
-                class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"
+              <CustomInputText
+                class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12"
+                v-model="form.email"
+                :rules="[requiredField]"
+                :label="$t('email')"
+              />
+              <CustomInputText
+                class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12"
+                v-model="form.name_user"
+                :rules="[requiredField]"
+                :label="$t('nome')"
+              />              
+              <CustomPrimaryButton
+                class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 q-mt-lg"
                 @click="submit"
                 type="submit"
                 :message="$t('criar_conta')"
               />
             </div>
+            
           </q-form>
         </template>
       </CustomCard>
@@ -50,10 +63,10 @@ import CustomInputPassword from "../../components/inputs/CustomInputPassword.vue
 import CustomPrimaryButton from "../../components/buttons/CustomPrimaryButton.vue";
 import CustomLayout from "src/components/util/CustomLayout.vue";
 import CustomCard from "src/components/cards/CustomCard.vue"
-// import LoginService from "./LoginService";
+import UserService from "./UserService";
 
 const { requiredField } = useValidations();
-// const { post } = LoginService();
+const { post } = UserService('api/register');
 const { t } = useI18n();
 
 const isPwd = ref(true);
@@ -61,14 +74,17 @@ const isPwd = ref(true);
 const form = ref({
   email: "",
   password: "",
-  remember: false,
+  name_user: "",
+  login: "",
 });
+
 const toggleIsPwd = () => {
   isPwd.value = !isPwd.value;
 };
 
 const submit = async () => {
-  // const response = await post(form.value);
-  console.log(form.value);
+  await post(form.value).then((response) => {
+    console.log(response);
+  })
 };
 </script>

@@ -1,12 +1,12 @@
-import { Axios } from "axios";
+import useApi from "src/composables/useApi.js";
 
-export default function LoginService() {
-  const post = async ($data) => {
-      //Cookies.set("logged", true, { expires: 30 });
-    return "TESTE";
-  };
+export default function UserService(url) {
+  const { index, post, update, destroy } = useApi(url);
 
   return {
     post,
+    index,
+    update,
+    destroy
   };
 }

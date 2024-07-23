@@ -6,3 +6,4 @@
 * - Criar dois modelos diferentes de tabela
 * - Adicionar loading em botões e skeleton em campos(ainda é necessário criar esses componentes/recursos)
 * - Finalizar componentes "CustomCarouselThree" e "CustomCarouselCard"
+* - Criar .env neste projeto (adicionar url padrão: "http://localhost:8000"). Atualizar o arquivo de configuração do axios

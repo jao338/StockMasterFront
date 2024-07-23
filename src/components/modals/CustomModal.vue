@@ -19,12 +19,10 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
-
 const props = defineProps({
   filter: {
     type: String,
-    required: true,
+    required: false,
   },
 });
 </script>

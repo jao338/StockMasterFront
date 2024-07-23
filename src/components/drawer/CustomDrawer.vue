@@ -1,11 +1,11 @@
 <template>
-  <q-drawer bordered :width="200">
-    <q-list>
-      <div
+  <q-drawer bordered :width="230">
+    <q-list class="flex column full-height">
+      <q-item
         class="flex column justify-center items-center q-pa-md bg-transparent"
       >
         <CustomAvatar
-          class="cursor-pointer"
+          class="cursor-pointer" 
           @click="router.push('/profile')"
           link="/profile"
           src="src/assets/img/cat.jpg"
@@ -16,9 +16,19 @@
           {{ t('lorem') }}
         </div>
         <div class="text-grey">{{ t('lorem') }}</div>
-      </div>
-
+      </q-item>
+      <q-separator/>
       <CustomLink v-for="link in linksList" :key="link.title" v-bind="link" />
+      <q-space/>
+      <q-item clickable tag="a" href="/config">
+        <q-item-section avatar>
+          <q-icon name="settings"/>
+        </q-item-section>
+
+        <q-item-section>
+          <q-item-label>{{ t('configuracoes') }}</q-item-label>
+        </q-item-section>
+      </q-item>
     </q-list>
   </q-drawer>
 </template>
@@ -35,7 +45,6 @@ const { t } = useI18n();
 
 const q = useQuasar();
 const router = useRouter();
-
 const linksList = [
   {
     title: t("home"),
