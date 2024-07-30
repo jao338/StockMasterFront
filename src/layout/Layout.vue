@@ -12,7 +12,7 @@
           class="q-mr-sm"
           to="profile"
         />
-        <CustomSecondaryButton icon="logout" />
+        <CustomSecondaryButton @click="logout" icon="logout" />
       </template>
     </CustomHeader>
     <CustomDrawer v-model="drawer" />
@@ -26,6 +26,7 @@
 <script setup>
 import { useI18n } from "vue-i18n";
 import { ref } from "vue";
+import { useAuthStore } from "src/stores/authStore";
 
 import CustomDrawer from "src/components/drawer/CustomDrawer.vue";
 import CustomHeader from "src/components/header/CustomHeader.vue";
@@ -38,10 +39,15 @@ import CustomLayout from "src/components/util/CustomLayout.vue"
 const { t } = useI18n();
 
 const drawer = ref(true);
+const authStore = useAuthStore();
 
 const toggleDrawerValue = () => {
   drawer.value = !drawer.value;
 };
+
+const logout = (() => {
+  authStore.logout();
+})
 
 defineOptions({
   name: "DefaultLayout",

@@ -1,18 +1,22 @@
-import { Cookies } from 'quasar'
+import { useAuthStore } from 'src/stores/authStore';
 
-export default {
-  isLogged(to, from, next) {
-    const logged = Cookies.get('logged')
-
-    if (logged) {
-      return next('/home')
+const Guard = {
+  isLogged: (to, from, next) => {
+    const authStore = useAuthStore();
+    if (!authStore.token) {
+      next({ name: 'login' });
+    } else {
+      next();
     }
-
-    return next('/login')
   },
+  isAdmin: (to, from, next) => {
+    const authStore = useAuthStore();
+    if (authStore.user && authStore.user.role === 'admin') {
+      next();
+    } else {
+      next({ name: 'login' });
+    }
+  }
+};
 
-  //  Permite acessar a rota apenas se o usuário já estiver logado e ele for um gerente ou administrador
-  isManager(to, from, next) {
-
-  },
-}
+export default Guard;

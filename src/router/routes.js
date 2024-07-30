@@ -17,7 +17,7 @@ const routes = [
     path: "/profile",
     name: "profile",
     component: () => import("../pages/user/ProfilePage.vue"),
-    // beforeEnter: Guard.isLogged,
+    beforeEnter: Guard.isLogged,
   },
   {
     path: "/forgotPassword",
@@ -36,7 +36,7 @@ const routes = [
         component: () => import("../pages/home/HomePage.vue"),
       },
     ],
-    //beforeEnter: Guard.isLogged,
+    beforeEnter: Guard.isLogged,
   },
   {
     path: "/:catchAll(.*)*",

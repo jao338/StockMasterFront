@@ -29,12 +29,12 @@
               <CustomInputText
                 class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12"
                 v-model="form.email"
-                :rules="[requiredField]"
+                :rules="[requiredField, emailFormat]"
                 :label="$t('email')"
               />
               <CustomInputText
                 class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12"
-                v-model="form.name_user"
+                v-model="form.name"
                 :rules="[requiredField]"
                 :label="$t('nome')"
               />              
@@ -55,6 +55,8 @@
 <script setup>
 import { ref } from "vue";
 import { useI18n } from "vue-i18n";
+import { useAuthStore } from "src/stores/authStore";
+import { useRouter } from "vue-router";
 
 import useValidations from "src/composables/useValidations";
 
@@ -65,8 +67,12 @@ import CustomLayout from "src/components/util/CustomLayout.vue";
 import CustomCard from "src/components/cards/CustomCard.vue"
 import UserService from "./UserService";
 
-const { requiredField } = useValidations();
+const { requiredField, emailFormat } = useValidations();
 const { post } = UserService('api/register');
+
+const authStore = useAuthStore();
+const router = useRouter();
+
 const { t } = useI18n();
 
 const isPwd = ref(true);
@@ -74,7 +80,7 @@ const isPwd = ref(true);
 const form = ref({
   email: "",
   password: "",
-  name_user: "",
+  name: "",
   login: "",
 });
 
@@ -84,7 +90,8 @@ const toggleIsPwd = () => {
 
 const submit = async () => {
   await post(form.value).then((response) => {
-    console.log(response);
+    authStore.setUserData(response);
+    router.push('/')
   })
 };
 </script>
