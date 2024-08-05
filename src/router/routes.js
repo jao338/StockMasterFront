@@ -28,7 +28,7 @@ const routes = [
   {
     path: "/",
     name: "layout",
-      component: () => import("../layout/Layout.vue"),
+    component: () => import("../layout/Layout.vue"),
     children: [
       {
         path: "/",
@@ -36,7 +36,7 @@ const routes = [
         component: () => import("../pages/home/HomePage.vue"),
       },
     ],
-    beforeEnter: Guard.isLogged,
+    // beforeEnter: Guard.isLogged,
   },
   {
     path: "/:catchAll(.*)*",
