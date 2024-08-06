@@ -5,7 +5,7 @@
   >
     <q-toolbar>
       <q-toolbar-title class="flex justify-center text-black">
-        <span class="text-name">{{ t('desenvolvido_por') }}</span>
+        <span style="font-size: 12px;">{{ t('desenvolvido_por') }}</span>
       </q-toolbar-title>
     </q-toolbar></q-footer>
 
@@ -14,13 +14,7 @@
 import { useQuasar } from "quasar";
 import { useI18n } from "vue-i18n";
 
-const q = useQuasar();
+const { q } = useQuasar();
 const { t } = useI18n();
 
 </script>
-
-<style>
-.text-name {
-  font-size: 12px;
-}
-</style>

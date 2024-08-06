@@ -9,7 +9,7 @@
             src="src/assets/img/cat.jpg"
           />
         </div>
-      
+
       </template>
 
       <template v-slot:right>
@@ -52,7 +52,7 @@
     </CustomModal>
     <CustomButton
       class="mirrored-icon absolute-top-left q-ml-lg q-mt-lg"
-      icon="logout" 
+      icon="logout"
       to="home"
       color="secondary"
       fixed-top
@@ -61,7 +61,6 @@
 </template>
 <script setup>
 import { useI18n } from "vue-i18n";
-import { useRouter } from "vue-router";
 import { ref } from "vue";
 
 import CustomInputText from "src/components/inputs/CustomInputText.vue";
@@ -73,40 +72,8 @@ import CustomAvatar from "src/components/util/CustomAvatar.vue"
 
 const { t } = useI18n();
 
-const router = useRouter();
-
-const upload = () => {
-  alert('aqui deve ser um input do tipo file')
-};
-
 const dialog = ref(false);
 
-const edit = () => {
-  alert("edit");
-};
-
-const options = [
-  { label: "Ativo", value: 1 },
-  { label: "Inativo", value: 2 },
-  { label: "Pendente", value: 3 },
-];
-/*
-
-function resetForm() {
-  return {
-    name: "Lorem Ipsum",
-    email: "loremipsum123@hotmail.com",
-    departament: "Vendas",
-    office: "Vendedor 1",
-    status: { label: "Ativo", value: 1 },
-    telephony: "+55 (19) 99999-9999",
-    creation_date: "04/07/2024",
-  };
-}
-
-const form = resetForm();
-
-*/
 </script>
 
 <style>

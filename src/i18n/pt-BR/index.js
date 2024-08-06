@@ -71,5 +71,6 @@ export default {
   enviar: "Enviar",
   exemplo: "Exemplo",
   configuracoes: "Configurações",
-  placeholder_email: "example@hotmail.com" 
+  placeholder_email: "example@hotmail.com",
+		pagina: "Página | Páginas"
 };

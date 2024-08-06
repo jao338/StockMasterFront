@@ -35,6 +35,19 @@ const routes = [
         name: "home",
         component: () => import("../pages/home/HomePage.vue"),
       },
+      {
+        path: "/example",
+        name: "exemplePage",
+        component: () => import("../pages/example/ExampleLayout.vue"),
+        redirect: { name: "examplePage" },
+        children: [
+          {
+            path: "",
+            name: "examplePage",
+            component: () => import("../pages/example/ExamplePage.vue"),
+          }
+        ]
+      },
     ],
     // beforeEnter: Guard.isLogged,
   },

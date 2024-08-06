@@ -1,31 +1,21 @@
 <template>
-    <q-avatar>
-      <img :src="props.src" :alt="t('nao_encontrado')"/>
-      <q-input
-        @update:model-value="val => { file = val[0] }"
-        filled
-        type="file"
-        hint="Native file"
-      />
-    </q-avatar>
-
+	<q-avatar @click="router.push('/profile')" class="cursor-pointer">
+		<img
+			:src="user.img ? user.img : 'src/assets/img/cat.jpg'"
+			:alt="t('nao_encontrado')"
+		/>
+	</q-avatar>
 </template>
 
 <script setup>
 import { useI18n } from "vue-i18n";
-import { onMounted } from "vue";
+import { useRouter } from "vue-router";
+import { useAuthStore } from "src/stores/authStore";
+import { storeToRefs } from "pinia";
+
+const { user } = storeToRefs(useAuthStore());
 
 const { t } = useI18n();
 
-const props = defineProps({
-  src: {
-    type: String,
-    required: false,
-  },
-});
-
-onMounted(() => {
-
-})
-
+const router = useRouter();
 </script>

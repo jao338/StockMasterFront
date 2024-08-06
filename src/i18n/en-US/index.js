@@ -70,5 +70,6 @@ export default {
   texto_esqueci_senha_aviso: "Em breve você receberá um link em seu email para recuperar a sua senha!",
   enviar: "Send",
   exemplo: "Example",
-  configuracoes: "Settings" 
+  configuracoes: "Settings",
+		pagina: "Page | Pages"
 };

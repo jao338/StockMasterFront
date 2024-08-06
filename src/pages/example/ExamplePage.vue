@@ -1,7 +1,20 @@
 <template>
-    <div>
-        Example
-    </div>
+	<CustomLayout>
+		<CustomCard>
+			<template v-slot:content>
+				<div class="text-h6">{{	t("exemplo") }}</div>
+			</template>
+		</CustomCard>
+	</CustomLayout>
 </template>
 
-<script setup></script>
+<script setup>
+import { useI18n } from "vue-i18n";
+
+import CustomCard from "src/components/cards/CustomCard.vue";
+import CustomLayout from "src/components/util/CustomLayout.vue";
+
+const { t } = useI18n();
+
+</script>
+
