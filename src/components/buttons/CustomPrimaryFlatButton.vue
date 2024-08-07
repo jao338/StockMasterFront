@@ -5,6 +5,7 @@
     :to="{ name: props.to }"
     @click="props.to ? router.push(props.to) : ''"
     flat
+    rounded
   >
     {{ message }}
   </q-btn>

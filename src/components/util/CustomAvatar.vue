@@ -1,5 +1,5 @@
 <template>
-	<q-avatar @click="router.push('/profile')" class="cursor-pointer">
+	<q-avatar size="80px" class="cursor-pointer">
 		<img
 			:src="user.img ? user.img : 'src/assets/img/cat.jpg'"
 			:alt="t('nao_encontrado')"
@@ -17,5 +17,4 @@ const { user } = storeToRefs(useAuthStore());
 
 const { t } = useI18n();
 
-const router = useRouter();
 </script>

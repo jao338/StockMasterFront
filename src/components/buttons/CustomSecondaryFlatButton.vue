@@ -5,6 +5,7 @@
     :to="{ name: props.to }"
     @click="props.to ? router.push(props.to) : ''"
     flat
+    rounded
   >
     {{ message }}
   </q-btn>
@@ -31,7 +32,7 @@ const props = defineProps({
   color: {
     type: String,
     required: false,
-    default: 'secondary'
+    default: "secondary",
   },
 });
 </script>

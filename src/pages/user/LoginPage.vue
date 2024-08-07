@@ -95,6 +95,3 @@ const submit = async () => {
   console.log(form.value);
 };
 </script>
-
-<style>
-</style>

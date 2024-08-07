@@ -4,7 +4,7 @@
 			<q-item
 				class="flex column justify-center items-center q-pa-md bg-transparent"
 			>
-				<CustomAvatar />
+				<CustomAvatar @click="router.push('/profile')" />
 				<div
 					:class="
 						!$q.dark.isActive
@@ -30,11 +30,13 @@ import CustomLink from "src/components/util/CustomLink.vue";
 import CustomAvatar from "src/components/util/CustomAvatar.vue";
 
 import { useQuasar } from "quasar";
+import { useRouter} from "vue-router";
 import { useI18n } from "vue-i18n";
 
 const { t } = useI18n();
 
 const q = useQuasar();
+const router = useRouter();
 const linksList = [
 {
 		item: {
