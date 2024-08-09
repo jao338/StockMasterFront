@@ -10,12 +10,14 @@
 
           <div class="row q-pa-md">
             <CustomInputText
+              data-cy="input-login"
               class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 q-mb-md"
               v-model="form.login"
               :rules="[requiredField]"
               :label="$t('login')"
             />
             <CustomInputPassword
+              data-cy="input-password"
               class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"
               v-model="form.password"
               :type="isPwd ? 'password' : 'text'"
@@ -25,6 +27,7 @@
               :label="$t('senha')"
             />
             <CustomCheckbox
+              data-cy="input-remember"
               class="q-mb-md col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"
               v-model="form.remember"
               :label="$t('lembrar_de_mim')"
@@ -76,7 +79,7 @@ import CustomCard from "src/components/cards/CustomCard.vue";
 // import LoginService from "./LoginService";
 
 const { requiredField } = useValidations();
-// const { post } = LoginService();
+// const { post } = LoginService('api/login');
 const { t } = useI18n();
 
 const isPwd = ref(true);

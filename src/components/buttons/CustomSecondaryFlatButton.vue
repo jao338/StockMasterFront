@@ -1,5 +1,6 @@
 <template>
   <q-btn
+    data-cy="btn-secondaryFlat"
     :color="props.color"
     :icon="props.icon"
     :to="{ name: props.to }"
