@@ -10,14 +10,14 @@
 
           <div class="row q-pa-md">
             <CustomInputText
-              data-cy="input-login"
+              data-cy="input-text-login"
               class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 q-mb-md"
               v-model="form.login"
               :rules="[requiredField]"
               :label="$t('login')"
             />
             <CustomInputPassword
-              data-cy="input-password"
+              data-cy="input-text-password"
               class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"
               v-model="form.password"
               :type="isPwd ? 'password' : 'text'"
@@ -27,7 +27,7 @@
               :label="$t('senha')"
             />
             <CustomCheckbox
-              data-cy="input-remember"
+              data-cy="input-checkbox-remember"
               class="q-mb-md col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"
               v-model="form.remember"
               :label="$t('lembrar_de_mim')"
