@@ -18,7 +18,6 @@ const testFiles = testDirectories.flatMap(getTestFiles).join(',');
 if (testFiles) {
   try {
     execSync(`npx cypress run --spec "${testFiles}"`, { stdio: 'inherit' });
-    console.log('Testes concluídos com sucesso.');
   } catch (error) {
     console.error('Erro ao executar os testes:', error.message);
   }

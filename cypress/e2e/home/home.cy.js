@@ -1,9 +1,11 @@
+import { fields } from '../auth/util/dataLogin'
+
 describe('SPEC - cypress/e2e/home/home.cy.js', () => {
   beforeEach(() => {
-    cy.login(Cypress.env('CY_USER'), Cypress.env('CY_PASSWORD'))
+    cy.login(fields)
   });
   context('', () => {
-    it('IT - Home', () => {
+    it('Navegate', () => {
       cy.log('Deu certo')
     })
   })

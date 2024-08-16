@@ -1,17 +1,18 @@
-Cypress.Commands.add("login", (login, password) => {
-  cy.intercept("POST", "**/api/login**").as("postLogin");
+Cypress.Commands.add("login", (login) => {
+  cy.session([], () => {
+    cy.visit("/login");
 
-  cy.visit("/login");
+    cy.intercept("POST", "**/api/login**").as("postLogin");
 
-  cy.writeInput("input-text-login", login);
-  cy.writeInput("input-text-password", password);
+    cy.writesInputs(login)
 
-  cy.selectByAttribute("btn-primary")
-    .click()
-    .then(() => {
-      cy.visit('');
-      // cy.waitResponse("postLogin", 200);
-    });
+    cy.selectByAttribute("btn-primary")
+      .click()
+      .then(() => {
+        // cy.waitResponse("postLogin", 200);
+      });
+  })
+  cy.visit('')
 });
 
 Cypress.Commands.add("logout", () => {
@@ -34,9 +35,11 @@ Cypress.Commands.add("writesInputs", (fields) => {
       cy.selectByAttribute(element.field)
         .click()
         .then(() => {
-          cy.get(".q-select q-item").contains(element.value).click();
+          cy.get(".q-select .q-item").contains(element.value).click();
         });
-    } else {
+    } else if(element.checkbox){
+      cy.selectByAttribute(element.field).click()
+    }else {
       cy.writeInput(element.field, element.value);
     }
   });

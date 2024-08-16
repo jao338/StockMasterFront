@@ -1,6 +1,5 @@
 <template>
 	<div>
-
 		<div v-if="props.item.children">
 			<q-expansion-item :icon="props.item.icon" :label="props.item.text">
 				<q-item v-for="item in props.item.children" clickable tag="a" :href="item.link">

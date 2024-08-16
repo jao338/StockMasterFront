@@ -19,7 +19,7 @@
 
 			<q-separator />
 
-			<CustomLink v-for="link in linksList" :key="link.title" v-bind="link" />
+			<CustomLink v-for="(link, index) in linksList" :key="link.title" :data-cy="`custom-link-${index}`" v-bind="link" />
 
 		</q-scroll-area>
 	</q-drawer>
