@@ -3,8 +3,8 @@
     :class="
       !$q.dark.isActive ? 'bg-white q-pa-sm flex' : 'bg-black q-pa-sm flex'
     "
-    elevated
-  >
+    bordered
+    >
     <q-toolbar>
       <CustomPrimaryFlatButton
         @click="toogleDrawer"

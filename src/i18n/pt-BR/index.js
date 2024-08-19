@@ -72,5 +72,6 @@ export default {
   exemplo: "Exemplo",
   configuracoes: "Configurações",
   placeholder_email: "example@hotmail.com",
-		pagina: "Página | Páginas"
+  pagina: "Página | Páginas",
+  ajuda: 'Ajuda',
 };

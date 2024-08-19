@@ -18,9 +18,7 @@
 			</q-item>
 
 			<q-separator />
-
 			<CustomLink v-for="(link, index) in linksList" :key="link.title" :data-cy="`custom-link-${index}`" v-bind="link" />
-
 		</q-scroll-area>
 	</q-drawer>
 </template>
@@ -45,20 +43,34 @@ const linksList = [
 			text: t("home"),
 		},
 	},
-	{
+  {
 		item: {
-			icon: "menu",
-			link: "",
-			text: t("pagina", 2),
-			children: [
-				{
-					text: t("exemplo"),
-					icon: "menu",
-					link: "/example",
-				},
-			],
+			icon: "corporate_fare",
+			link: "/departament",
+			text: t("departamento", 2),
 		},
 	},
+  {
+		item: {
+			icon: "inventory_2",
+			link: "/supplier",
+			text: t("fornecedor", 2),
+		},
+	},
+	// {
+	// 	item: {
+	// 		icon: "menu",
+	// 		link: "",
+	// 		text: t("exemplo"),
+	// 		children: [
+	// 			{
+	// 				text: t("exemplo"),
+	// 				icon: "menu",
+	// 				link: "/example",
+	// 			},
+	// 		],
+	// 	},
+	// },
 	{
 		item: {
 			icon: "settings",

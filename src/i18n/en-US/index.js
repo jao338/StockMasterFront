@@ -71,5 +71,6 @@ export default {
   enviar: "Send",
   exemplo: "Example",
   configuracoes: "Settings",
-		pagina: "Page | Pages"
+	pagina: "Page | Pages",
+  ajuda: 'Help',
 };

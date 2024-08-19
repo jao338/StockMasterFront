@@ -1,7 +1,7 @@
 <template>
   <CustomLayout view="lHh Lpr lFf">
     <CustomHeader
-      :message="$t('lorem')"
+      :message="$t('stockmaster')"
       @toogleDrawer="toggleDrawerValue"
     >
       <template v-slot:buttons>
@@ -19,7 +19,6 @@
     <q-page-container>
       <router-view />
     </q-page-container>
-    <CustomFooter/>
   </CustomLayout>
 </template>
 
@@ -30,7 +29,6 @@ import { useAuthStore } from "src/stores/authStore";
 
 import CustomDrawer from "src/components/drawer/CustomDrawer.vue";
 import CustomHeader from "src/components/header/CustomHeader.vue";
-import CustomFooter from "src/components/footer/CustomFooter.vue"
 import CustomPrimaryButton from "src/components/buttons/CustomPrimaryButton.vue";
 import CustomSecondaryButton from "src/components/buttons/CustomSecondaryButton.vue"
 import CustomToggle from "src/components/util/CustomToggle.vue";
