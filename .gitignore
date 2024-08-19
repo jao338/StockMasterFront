@@ -35,3 +35,7 @@ yarn-error.log*
 # Pastas de referências e mais
 ref/
 
+#Cypress
+/cypress/downloads
+/cypress/screenshots
+/cypress/videos

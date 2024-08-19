@@ -1,63 +1,64 @@
 <template>
-  <CustomLayout class="row justify-center items-center q-pa-md">
-      <CustomCard class="bg-white col-xl-3 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-        <template v-slot:content>
-          <q-form
-            @submit.prevent="submit"
-            class="q-ma-sm row"
-          >
-            <div class="text-h6 text-black text-center full-width q-mb-sm">
-              {{ $t("login") }}
-            </div>
+  <CustomLayout class="row justify-center items-center">
+    <CustomCard class="bg-white col-xl-3 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+      <template v-slot:content>
+        <q-form @submit.prevent="submit" class="q-ma-sm row">
+          <CustomSecondaryFlatButton to="/" icon="arrow_back" />
+          <div class="text-h6 text-black text-center full-width q-mb-sm">
+            {{ $t("login") }}
+          </div>
 
-            <div class="row q-pa-md">
-              <custom-input-text
-                class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 q-mb-md"
-                v-model="form.login"
-                :rules="[requiredField]"
-                :label="$t('login')"
-              />
-              <custom-input-password
-                class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"
-                v-model="form.password"
-                :type="isPwd ? 'password' : 'text'"
-                :isPwd="isPwd"
-                @toggleIsPwd="toggleIsPwd"
-                :rules="[requiredField]"
-                :label="$t('senha')"
-              />
-              <custom-checkbox
-                class="q-mb-md col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"
-                v-model="form.remember"
-                :label="$t('lembrar_de_mim')"
-              />
-              <custom-primary-button
-                class="q-pa-sm col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"
-                @click="submit"
-                type="submit"
-                :message="$t('login')"
-              />
-              <div
-                class="row justify-between items-center q-mt-md col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"
-              >
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                  <custom-secondary-flat-button
-                    to="/register"
-                    class="text-caption"
-                    :message="$t('sem_registro')"
-                  />
-                </div>
-
-                <custom-secondary-button
-                  to="/forgotPassword"
-                  class="q-pa-sm text-caption col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-6"
-                  :message="$t('esqueceu_senha')"
+          <div class="row q-pa-md">
+            <CustomInputText
+              data-cy="input-text-login"
+              class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 q-mb-md"
+              v-model="form.login"
+              :rules="[requiredField]"
+              :label="$t('login')"
+            />
+            <CustomInputPassword
+              data-cy="input-text-password"
+              class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"
+              v-model="form.password"
+              :type="isPwd ? 'password' : 'text'"
+              :isPwd="isPwd"
+              @toggleIsPwd="toggleIsPwd"
+              :rules="[requiredField]"
+              :label="$t('senha')"
+            />
+            <CustomCheckbox
+              data-cy="input-checkbox-remember"
+              class="q-mb-md col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"
+              v-model="form.remember"
+              :label="$t('lembrar_de_mim')"
+            />
+            <CustomPrimaryButton
+              class="q-pa-sm col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"
+              @click="submit"
+              type="submit"
+              :message="$t('login')"
+            />
+            <div
+              class="row justify-between items-center q-mt-md col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"
+            >
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <CustomSecondaryFlatButton
+                  to="/register"
+                  class="text-caption"
+                  :message="$t('sem_registro')"
                 />
               </div>
+
+              <CustomSecondaryButton
+                to="/forgotPassword"
+                class="q-pa-sm text-caption col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-6"
+                :message="$t('esqueceu_senha')"
+              />
             </div>
-          </q-form>
-        </template>
-      </CustomCard>
+          </div>
+        </q-form>
+      </template>
+    </CustomCard>
   </CustomLayout>
 </template>
 
@@ -70,15 +71,15 @@ import useValidations from "src/composables/useValidations";
 import CustomInputText from "../../components/inputs/CustomInputText.vue";
 import CustomInputPassword from "../../components/inputs/CustomInputPassword.vue";
 import CustomPrimaryButton from "../../components/buttons/CustomPrimaryButton.vue";
-import CustomSecondaryButton from "../../components/buttons/CustomSecondaryButton.vue"
-import CustomSecondaryFlatButton from "../../components/buttons/CustomSecondaryFlatButton.vue"
+import CustomSecondaryButton from "../../components/buttons/CustomSecondaryButton.vue";
+import CustomSecondaryFlatButton from "../../components/buttons/CustomSecondaryFlatButton.vue";
 import CustomCheckbox from "../../components/util/CustomCheckbox.vue";
 import CustomLayout from "src/components/util/CustomLayout.vue";
-import CustomCard from "src/components/cards/CustomCard.vue"
+import CustomCard from "src/components/cards/CustomCard.vue";
 // import LoginService from "./LoginService";
 
 const { requiredField } = useValidations();
-// const { post } = LoginService();
+// const { post } = LoginService('api/login');
 const { t } = useI18n();
 
 const isPwd = ref(true);

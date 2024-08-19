@@ -4,16 +4,16 @@
     v-model="slide"
     arrows
     infinite
-  > 
+  >
     <q-carousel-item
       class=""
-      v-for="item in items" 
-      :key="item.name" 
+      v-for="item in items"
+      :key="item.name"
       :name="item.name"
       :img-src="item.src"
     >
-    <CustomCarouselCard class="teste"/>
-    
+    <CustomCarouselCard class="carouselCard"/>
+
     </q-carousel-item>
 
   </q-carousel>
@@ -35,7 +35,7 @@ const props = defineProps({
 </script>
 
 <style>
-.teste{
+.carouselCard{
   width: 900px;
 }
 </style>

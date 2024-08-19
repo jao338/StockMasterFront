@@ -17,7 +17,7 @@ const routes = [
     path: "/profile",
     name: "profile",
     component: () => import("../pages/user/ProfilePage.vue"),
-    beforeEnter: Guard.isLogged,
+    // beforeEnter: Guard.isLogged,
   },
   {
     path: "/forgotPassword",
@@ -28,15 +28,28 @@ const routes = [
   {
     path: "/",
     name: "layout",
-      component: () => import("../layout/Layout.vue"),
+    component: () => import("../layout/Layout.vue"),
     children: [
       {
         path: "/",
         name: "home",
         component: () => import("../pages/home/HomePage.vue"),
       },
+      {
+        path: "/example",
+        name: "exemplePage",
+        component: () => import("../pages/example/ExampleLayout.vue"),
+        redirect: { name: "examplePage" },
+        children: [
+          {
+            path: "",
+            name: "examplePage",
+            component: () => import("../pages/example/ExamplePage.vue"),
+          }
+        ]
+      },
     ],
-    beforeEnter: Guard.isLogged,
+    // beforeEnter: Guard.isLogged,
   },
   {
     path: "/:catchAll(.*)*",

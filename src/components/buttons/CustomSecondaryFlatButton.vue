@@ -1,10 +1,12 @@
 <template>
   <q-btn
+    data-cy="btn-secondaryFlat"
     :color="props.color"
     :icon="props.icon"
     :to="{ name: props.to }"
     @click="props.to ? router.push(props.to) : ''"
     flat
+    rounded
   >
     {{ message }}
   </q-btn>
@@ -31,7 +33,7 @@ const props = defineProps({
   color: {
     type: String,
     required: false,
-    default: 'secondary'
+    default: "secondary",
   },
 });
 </script>

@@ -19,7 +19,7 @@
 
 <script setup>
 const props = defineProps({
-  modelValue: [String, Number],
+  modelValue: String | Number,
   clearable: {
     type: Boolean,
     default: true,

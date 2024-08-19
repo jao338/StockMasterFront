@@ -1,5 +1,6 @@
 <template>
   <q-btn
+    data-cy="btn-primary"
     :color="props.color"
     :icon="props.icon"
     :to="{ name: props.to }"
