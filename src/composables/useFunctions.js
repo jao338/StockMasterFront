@@ -23,9 +23,42 @@ export default function useFunctions() {
     });
   };
 
+  const transformAccessType = (accessType) => {
+    switch (accessType) {
+      case 1:
+        return "ADM"
+        break;
+      case 2:
+        return "Gerente"
+        break;
+      case 3:
+        return "Normal"
+        break;
+
+      default:
+        break;
+    }
+  };
+
+  const transformStatus = (accessType) => {
+    switch (accessType) {
+      case 0:
+        return 'Inativo'
+        break;
+      case 1:
+        return 'Ativo'
+        break;
+
+      default:
+        break;
+    }
+  };
+
   return {
     formatDate,
     debounce,
     copyToClipboard,
+    transformAccessType,
+    transformStatus
   };
 }
